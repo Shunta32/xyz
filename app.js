@@ -1,1 +1,44 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#game-container {
+    margin-top: 50px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    width: 60px;
+    text-align: center;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#message {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#attempts {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+}
 
