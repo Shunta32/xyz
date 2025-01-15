@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字当てゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="game-container">
+        <h1>数字当てゲーム</h1>
+        <p>1から100の間の数字を予想してください。</p>
+        <input type="number" id="guess-input" min="1" max="100" />
+        <button id="guess-button">予想！</button>
+        <p id="message"></p>
+        <p id="attempts">試行回数: 0</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((registration) => {
+            console.log("サービスワーカーの登録に成功しました:", registration);
+          })
+          .catch((error) => {
+            console.log("サービスワーカーの登録に失敗しました:", error);
+          });
+      }
+    </script>
+</body>
+</html>
 
