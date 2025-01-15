@@ -1,44 +1,28 @@
-/* style.css */
+// script.js
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
+let secretNumber = Math.floor(Math.random() * 100) + 1; // 1から100の間でランダムな数字を生成
+let attempts = 0; // 試行回数
+let messageElement = document.getElementById("message");
+let attemptsElement = document.getElementById("attempts");
+let guessButton = document.getElementById("guess-button");
+let guessInput = document.getElementById("guess-input");
 
-#game-container {
-    margin-top: 50px;
-}
+guessButton.addEventListener("click", function() {
+    let userGuess = parseInt(guessInput.value);
+    attempts++;
 
-input {
-    padding: 10px;
-    font-size: 18px;
-    width: 60px;
-    text-align: center;
-}
+    if (userGuess === secretNumber) {
+        messageElement.textContent = `おめでとう！数字は ${secretNumber} でした！`;
+        guessButton.disabled = true; // 正解後にボタンを無効にする
+    } else if (userGuess < secretNumber) {
+        messageElement.textContent = "もっと大きい数字です！";
+    } else if (userGuess > secretNumber) {
+        messageElement.textContent = "もっと小さい数字です！";
+    }
 
-button {
-    font-size: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-}
+    attemptsElement.textContent = `試行回数: ${attempts}`;
+    guessInput.value = ""; // 入力フィールドをクリア
+    guessInput.focus(); // 入力フィールドにフォーカスを戻す
+});
 
-#message {
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-#attempts {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-h1 {
-    font-size: 36px;
-    color: #333;
-}
 
